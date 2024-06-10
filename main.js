@@ -20,7 +20,8 @@ function gotResult(error, result) {
     if (error) {
         console.error(error);
     } else {
-       console.log(result); 
+       console.log(result);
+       document.getElementById("output").innerHTML = result[0].label; 
     }
 }
 
@@ -30,7 +31,7 @@ function check() {
 }
 
 console.log(ml5.version);
-classifier = ml5.imageClassifier('', modelLoaded)
+classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/o9QlZyCtJ/model.json', modelLoaded)
 
 function modelLoaded() {
     console.log('Model Loaded');
